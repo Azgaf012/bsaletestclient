@@ -14,9 +14,11 @@ const imageProductDefault =
 const productAllAPI = "https://bsaletestapirest.herokuapp.com/v1/productsPage/?page=";
 const productsCategoryAPI = "https://bsaletestapirest.herokuapp.com/v1/productsCategoryPage?category=";
 const productsNameAPI = "https://bsaletestapirest.herokuapp.com/v1/productsNamePage?name=";
+const categoriesAllAPI = "https://bsaletestapirest.herokuapp.com/v1/categories";
 
 let productAPI = productAllAPI
-let category = ""
+let textFilter = ""
+
 
 const getPagination = (pageNumber, totalPages) => {
     $ulPagTop.innerHTML = ""
@@ -81,6 +83,8 @@ const getProducts = async(url, page = 0) => {
             statusText: res.statusText,
         };
 
+        d.getElementById("titleFilter").innerHTML = `Mostrando ${json.totalElements} producto(s) ${textFilter}`
+
         $cardsProducts.innerHTML = ""
 
         getPagination(json.pageable.pageNumber, json.totalPages)
@@ -106,12 +110,13 @@ const getProducts = async(url, page = 0) => {
         $cardsProducts.appendChild($fragmentoProducts);
     } catch (err) {
         let message = err.statusText || "Ocurrio un error";
+        $cardsProducts.innerHTML = message;
     }
 };
 
 const getCategories = async() => {
     try {
-        let res = await fetch("https://bsaletestapirest.herokuapp.com/v1/categories"),
+        let res = await fetch(categoriesAllAPI),
             json = await res.json();
 
         if (!res.ok)
@@ -141,6 +146,8 @@ d.addEventListener("click", e => {
         e.preventDefault()
         getProducts(productAPI, e.target.getAttribute("data-page"))
     } else if (e.target.matches("li .category")) {
+
+
         let $li = d.createElement("li")
         $li.textContent = e.target.textContent
         $li.classList.add("breadcrumb-item")
@@ -148,6 +155,8 @@ d.addEventListener("click", e => {
         $li.setAttribute("id", "breadcrumbCategory")
 
         productAPI = productsCategoryAPI + e.target.getAttribute("data-category") + '&page='
+
+        textFilter = `para  la categoria <strong>"${e.target.textContent}"</strong>.`
         getProducts(productAPI)
 
         if (d.getElementById("breadcrumbCategory")) d.getElementById("breadcrumb").removeChild(d.getElementById("breadcrumbCategory"))
@@ -155,14 +164,17 @@ d.addEventListener("click", e => {
         d.getElementById("breadcrumb").appendChild($li)
     } else if (e.target.matches("span .searchName")) {
         e.preventDefault()
+
         let search = d.getElementById("inputSearch").value
         productAPI = productsNameAPI + search + '&page='
+        textFilter = (String(search).length > 0) ? `para <strong>"${search}"</strong>.` : ""
         getProducts(productAPI)
     } else if (e.target.matches("#breadcrumb .linkIndex")) {
 
         if (d.getElementById("breadcrumbCategory")) d.getElementById("breadcrumb").removeChild(d.getElementById("breadcrumbCategory"))
 
         productAPI = productAllAPI
+        textFilter = ""
         getProducts(productAPI, page = 0)
     }
 })
@@ -171,6 +183,8 @@ d.addEventListener("keypress", e => {
         e.preventDefault()
         let search = d.getElementById("inputSearch").value
         productAPI = productsNameAPI + search + '&page='
+
+        textFilter = (String(search).length > 0) ? `para <strong>"${search}"</strong>.` : ""
         getProducts(productAPI)
     }
 })

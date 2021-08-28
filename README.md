@@ -13,6 +13,8 @@ Para el API REST se utilizo  el lenguaje Java con el framework Spring bot, puede
 
 # FrontEnd
 
+El FrontEnd obtiene los productos 
+
 ## Tecnologías utilizadas
 
 - HTML 5.

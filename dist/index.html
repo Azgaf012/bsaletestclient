@@ -8,21 +8,27 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-    <title>BSale</title>
+    <title>BSaleTest</title>
 </head>
 
 <body class="bg-opacity-10 bg-secondary">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
         <div class="container-fluid container-sm">
+            <!--Botón que se mostrara en pantallas pequeñas-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
+
+            <!--Titulo de la parte superior izquierda-->
             <div class="p-2 bd-highlight">
                 <a class="navbar-brand h1" href="#">BSale Test</a>
             </div>
+
+            <!---->
             <div class="collapse navbar-collapse p-2 bd-highlight" id="navbarTogglerDemo03">
                 <div class="d-sm-flex p-2 bd-highlight flex-sm-fill">
+                    <!--Lista de categorias-->
                     <div class="p-2 bd-highlight">
                         <ul class="navbar-nav me-3 ">
                             <li class="nav-item dropdown">
@@ -32,6 +38,7 @@
                         </ul>
                     </div>
 
+                    <!--Buscador superior-->
                     <div class="p-2 bd-highlight input-group">
                         <input type="text" class="form-control" id="inputSearch" placeholder="Buscar productos" aria-label="Products" aria-describedby="addon-wrapping">
                         <span class="input-group-text">
@@ -42,15 +49,14 @@
                             </a>
                         </span>
                     </div>
+
+                    <!--Carrito de compras ubicado en la parte derecha superior-->
                     <div class="p-2 bd-highlight float-end">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart4 text-danger" viewBox="0 0 16 16">
                     <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
                   </svg>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
 
@@ -58,6 +64,7 @@
     <div class="container">
         <div class="mt-2 row">
             <div class="col">
+                <!--Fila para mostrar la navegación de la página-->
                 <div class="row">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb" id="breadcrumb">
@@ -70,10 +77,14 @@
                         </ol>
                     </nav>
                 </div>
+
+
                 <div class="row">
+                    <!--Texto con información resumen de la lista de productos-->
                     <div class="col">
                         <p id="titleFilter"></p>
                     </div>
+                    <!--Paginación superior-->
                     <div class="col">
                         <nav aria-label="...">
                             <ul class="pagination justify-content-end" id="paginationTop"></ul>
@@ -82,6 +93,7 @@
 
                 </div>
 
+                <!--Fila para mostrar los productos -->
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-5 justify-content-md-center cardsProducts mb-3">
                     <div class="d-flex justify-content-center">
                         <div class="spinner-border" role="status">
@@ -90,6 +102,7 @@
                     </div>
                 </div>
 
+                <!--Paginación inferior-->
                 <div class="row">
                     <nav aria-label="...">
                         <ul class="pagination justify-content-end" id="paginationEnd"></ul>
@@ -99,6 +112,7 @@
         </div>
     </div>
 
+    <!--Plantilla para insertar la lista de productos ordenado por card-->
     <template id="templateProducts">
       <div class="col">
         <div class="text-center shadow-sm card h-100">
@@ -133,6 +147,7 @@
       </div>
     </template>
 
+    <!--Plantilla para insertar la lista de categorias-->
     <template id="templateCategories">
       <li><a class="dropdown-item" href="#"></a></li>
     </template>

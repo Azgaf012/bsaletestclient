@@ -1,12 +1,12 @@
 # Prueba técnica BSale
 
-**Sobre el desafío**
+### Sobre el desafío
 
 Construir una tienda online que despliegue productos agrupados por la categoría a la que pertenecen, generando por separado backend (API REST) y frontend (aplicación que la consuma).
 
 Además, hay que agregar un buscador, el cual tiene que estar implementado a nivel de servidor, mediante una Api Rest cuyo lenguaje y framework puede ser de libre elección. Es decir, los datos de productos deben llegar filtrados al cliente.
 
-**Solución realizada**
+### Solución realizada
 
 Para cumplir con el desafío se desarrollo el front End utilizando HTML , Javascript y el framework Bootstrap. El archivo HTML y  JavaScript cuentan con comentarios que explican el funcionamiento de cada parte del codigo.
 
@@ -26,7 +26,7 @@ Luego se muestra la lista de productos ordenados en columnas segun el tamaño de
 
 Finalmente en la parte inferior nuevamente se muestra otro menú de paginación.
 
-** Tecnologías utilizadas **
+### Tecnologías utilizadas
 
 - HTML 5.
 - Javascript (Vanilla js).

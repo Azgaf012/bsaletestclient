@@ -12,7 +12,7 @@ Para cumplir con el desafío se desarrollo el front End utilizando HTML , Javasc
 
 Para crear el API REST se utilizo  el lenguaje Java con el framework Spring bot. Todo el codigo se encuentra comentado para hacer mas facil entender el codigo utilizado. Además, todas las consultaas a la base de datos se han realizado con parametros, para evitar inyección de sql. Puede ver más información sobre el API REST en el siguiente enlace: https://github.com/Azgaf012/BSaleTestApiRest.git
 
-Puede ver un deploy de la aplicación en el siguiente enlace: https://bsale-store-front.netlify.app/
+### Deploy: https://bsale-store-front.netlify.app/
 
 # FrontEnd
 

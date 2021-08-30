@@ -12,6 +12,8 @@ Para cumplir con el desafío se desarrollo el front End utilizando HTML , Javasc
 
 Para crear el API REST se utilizo  el lenguaje Java con el framework Spring bot. Todo el codigo se encuentra comentado para hacer mas facil entender el codigo utilizado. Además, todas las consultaas a la base de datos se han realizado con parametros, para evitar inyección de sql. Puede ver más información sobre el API REST en el siguiente enlace: https://github.com/Azgaf012/BSaleTestApiRest.git
 
+Puede ver un deploy de la aplicación en el siguiente enlace: https://bsale-store-front.netlify.app/
+
 # FrontEnd
 
 El FrontEnd cuenta con una página principal responsiva. Al cargar la página principal consume un endpoint que devuelve una lista de productos paginada y otro endpoint para listar las categorias.
@@ -25,6 +27,8 @@ En la siguiente fila, al lado izquierdo se muestra un texto resumen indicando la
 Luego se muestra la lista de productos ordenados en columnas segun el tamaño de la pantalla (como máximo 4 columnas) y como máximo 16 productos por página..
 
 Finalmente en la parte inferior nuevamente se muestra otro menú de paginación.
+
+![Pantalla de inicio](https://raw.githubusercontent.com/Azgaf012/bsaletestclient/main/imagen%20web.png)
 
 ### Tecnologías utilizadas
 
